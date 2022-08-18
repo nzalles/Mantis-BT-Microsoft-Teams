@@ -347,7 +347,7 @@ class MicrosoftTeamsPlugin extends MantisPlugin {
         curl_setopt($ch, CURLOPT_TIMEOUT, 5);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         $result = curl_exec($ch);
-        if ($result !== 'ok') {
+        if ($result !== '1') {
             trigger_error(curl_errno($ch) . ': ' . curl_error($ch), E_USER_ERROR);
             plugin_error('ERROR_CURL', E_USER_ERROR);
         }
